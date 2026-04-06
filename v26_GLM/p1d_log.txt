@@ -1,0 +1,69 @@
+No saved model found. Training from scratch...
+Device: cuda
+Loading data (sample_ratio=1.0)...
+Loading data with sample_ratio=1.0...
+  Loaded 845676 POIs
+  Loaded 54984 roads
+  Loaded 38422 landuse polygons
+Building cell features...
+  Built 67138 cells
+  Region labels: unique=7, with_label=67138
+  Loaded 67138 cells
+  Computing neighbor-relative direction...
+  Computing global-center direction...
+Training for 80 epochs...
+Epoch 1/80: DirAcc=18.8%, RegionF1=25.2%, RegionSep=1.06
+Epoch 15/80: DirAcc=32.5%, RegionF1=18.7%, RegionSep=1.05
+Epoch 30/80: DirAcc=64.9%, RegionF1=21.9%, RegionSep=1.06
+Epoch 45/80: DirAcc=68.8%, RegionF1=21.7%, RegionSep=1.06
+Epoch 60/80: DirAcc=70.2%, RegionF1=21.8%, RegionSep=1.06
+Epoch 75/80: DirAcc=70.6%, RegionF1=21.8%, RegionSep=1.06
+Model saved to D:\AAA_Edu\TagCloud\vite-project\spatial_encoder\v26_GLM\p1d_output\p1c_model.pt
+
+=== Generating Embeddings ===
+Generated embeddings: (67138, 352)
+
+=== Label Propagation ===
+  Labeled samples: 11541 (17.19%)
+  Unlabeled samples: 55597 (82.81%)
+  K = 10, confidence threshold = 0.7
+
+  Propagated labels: 32718
+  New coverage: 65.92%
+
+  Confidence distribution:
+    >= 0.5: 8206 samples
+    >= 0.6: 8774 samples
+    >= 0.7: 7184 samples
+    >= 0.8: 8226 samples
+    >= 0.9: 8566 samples
+    >= 1.0: 8742 samples
+
+============================================================
+P1D Label Propagation Report
+============================================================
+
+1. Coverage Comparison:
+   Original: 17.19% (11541 samples)
+   After propagation: 65.92% (44259 samples)
+   Increase: +48.73% (32718 samples)
+
+2. Class Distribution:
+   Class      Original     After Prop   Change    
+   --------------------------------------------
+   居住类        6148         23438        +17290     
+   商业类        738          745          +7         
+   工业类        1715         5143         +3428      
+   教育类        888          917          +29        
+   公共类        959          1053         +94        
+   自然类        1093         12963        +11870     
+   未知         55597        22879        -32718    
+
+3. Confidence Distribution (propagated samples only):
+   Mean: 0.858
+   Median: 0.900
+   High confidence (>0.9): 8742 (26.7%)
+   Medium confidence (0.7-0.9): 23976
+============================================================
+
+Saved: p1d_report.json, pseudo_labels.npy, confidence.npy

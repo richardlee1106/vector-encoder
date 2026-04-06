@@ -1,0 +1,93 @@
+{
+  "agent_counts": {
+    "point": 200,
+    "line": 60,
+    "polygon": 60
+  },
+  "unique_cells": 433,
+  "relation_counts": {
+    "adjacency": 432,
+    "functional_similarity": 122,
+    "cooccurrence": 18
+  },
+  "sample_config": {
+    "resolution": 9,
+    "point_limit": 200,
+    "line_limit": 60,
+    "polygon_limit": 60
+  },
+  "sample_source": {
+    "database": "geoloom",
+    "tables": {
+      "point": "pois",
+      "line": "wuhan_roads",
+      "polygon": "wuhan_landuse"
+    }
+  },
+  "top_point_categories": [
+    {
+      "name": "地名地址信息",
+      "count": 41
+    },
+    {
+      "name": "购物服务",
+      "count": 39
+    },
+    {
+      "name": "餐饮服务",
+      "count": 25
+    },
+    {
+      "name": "生活服务",
+      "count": 19
+    },
+    {
+      "name": "交通设施服务",
+      "count": 11
+    }
+  ],
+  "top_road_classes": [
+    {
+      "name": "unclassified",
+      "weight": 56
+    },
+    {
+      "name": "residential",
+      "weight": 28
+    },
+    {
+      "name": "tertiary",
+      "weight": 24
+    },
+    {
+      "name": "primary",
+      "weight": 13
+    },
+    {
+      "name": "secondary",
+      "weight": 11
+    }
+  ],
+  "top_landuse_types": [
+    {
+      "name": "河流湖泊",
+      "weight": 31
+    },
+    {
+      "name": "居住用地",
+      "weight": 9
+    },
+    {
+      "name": "公园与绿地用地",
+      "weight": 8
+    },
+    {
+      "name": "工业用地",
+      "weight": 5
+    },
+    {
+      "name": "医疗卫生用地",
+      "weight": 2
+    }
+  ]
+}

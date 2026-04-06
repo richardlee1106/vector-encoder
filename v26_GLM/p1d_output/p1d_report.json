@@ -1,0 +1,39 @@
+{
+  "original_coverage": 17.189966933778187,
+  "new_coverage": 44.32810033066222,
+  "propagated_count": 18220,
+  "class_distribution": {
+    "居住类": {
+      "original": 6148,
+      "after": 15251
+    },
+    "商业类": {
+      "original": 738,
+      "after": 986
+    },
+    "工业类": {
+      "original": 1715,
+      "after": 5488
+    },
+    "教育类": {
+      "original": 888,
+      "after": 1370
+    },
+    "公共类": {
+      "original": 959,
+      "after": 1722
+    },
+    "自然类": {
+      "original": 1093,
+      "after": 4944
+    },
+    "未知": {
+      "original": 55597,
+      "after": 37377
+    }
+  },
+  "confidence_stats": {
+    "mean": 0.8477467311810143,
+    "median": 1.0
+  }
+}

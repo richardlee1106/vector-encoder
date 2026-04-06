@@ -1,0 +1,51 @@
+{
+  "experiments": [
+    {
+      "name": "Pure Semantic",
+      "semantic_weight": 1.0,
+      "spatial_weight": 0.0,
+      "intra_class_recall": 23.089121442005176,
+      "spatial_precision": 100.0,
+      "query_time_ms": 32.11318946884064,
+      "f1": 37.51610405474877
+    },
+    {
+      "name": "Semantic Priority",
+      "semantic_weight": 0.7,
+      "spatial_weight": 0.3,
+      "intra_class_recall": 26.486895004260564,
+      "spatial_precision": 100.0,
+      "query_time_ms": 31.773857421809737,
+      "f1": 41.8808525599025
+    },
+    {
+      "name": "Balanced",
+      "semantic_weight": 0.5,
+      "spatial_weight": 0.5,
+      "intra_class_recall": 25.64623869971391,
+      "spatial_precision": 100.0,
+      "query_time_ms": 31.069085167655587,
+      "f1": 40.82293105321769
+    },
+    {
+      "name": "Spatial Priority",
+      "semantic_weight": 0.3,
+      "spatial_weight": 0.7,
+      "intra_class_recall": 25.889616800535475,
+      "spatial_precision": 100.0,
+      "query_time_ms": 30.942097599430916,
+      "f1": 41.130662649485195
+    },
+    {
+      "name": "Pure Spatial",
+      "semantic_weight": 0.0,
+      "spatial_weight": 1.0,
+      "intra_class_recall": 25.78300304392172,
+      "spatial_precision": 100.0,
+      "query_time_ms": 31.08478428666871,
+      "f1": 40.99600489402984
+    }
+  ],
+  "best_f1": "Semantic Priority",
+  "recommendation": "Semantic Priority (0.7, 0.3)"
+}

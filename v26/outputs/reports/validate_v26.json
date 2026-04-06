@@ -1,0 +1,11 @@
+{
+  "experiment": "v26-unified-spatial-encoder",
+  "relation_types": [
+    "adjacency",
+    "road_topology",
+    "cooccurrence",
+    "functional_similarity"
+  ],
+  "direction_head": true,
+  "region_head": true
+}
