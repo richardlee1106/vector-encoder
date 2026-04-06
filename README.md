@@ -1,14 +1,14 @@
-# Vector Encode
+# Vector Encoder
 
-`vector-encode` 是从原 `vite-project/spatial_encoder` 独立整理出来的空间编码器研究仓库，保留重点不是“全部搬家”，而是把真正有研究价值、能继续训练、能继续推理、能继续做实验复盘的核心资产抽出来。
+`vector-encoder` 是从原 `vite-project/spatial_encoder` 独立整理出来的空间编码器研究仓库，保留重点不是“全部搬家”，而是把真正有研究价值、能继续训练、能继续推理、能继续做实验复盘的核心资产抽出来。
 
 当前本地独立仓库目录：
 
-- `D:\AAA_Edu\vector-encode`
+- `D:\AAA_Edu\vector-encoder`
 
 GitHub：
 
-- `https://github.com/richardlee1106/vector-encode`
+- `https://github.com/richardlee1106/vector-encoder`
 
 ## 保留了哪些核心内容
 
@@ -23,7 +23,7 @@ GitHub：
 ## 目录概览
 
 ```text
-vector-encode/
+vector-encoder/
 ├─ api/                    # 编码器 API 与向量检索入口
 ├─ docs/                   # 实验报告、开发计划、分析结果
 ├─ models/                 # 通用模型层
@@ -38,11 +38,19 @@ vector-encode/
 
 ## 真实服务入口
 
-如果你要把它作为 `geoloom-agent` 的真实空间编码器服务跑起来，用这条命令：
+如果你要把它作为 `geoloom-agent` 的真实空间编码器服务跑起来，现在已经有统一入口：
 
 ```bash
-python python/services/geoloom_encoder_service.py --port 8100
+python run.py serve --port 8100
 ```
+
+Windows 下也可以直接：
+
+```bat
+start.bat
+```
+
+这两个入口做的是同一件事，不需要再先起一个脚本、再起第二个服务。
 
 默认健康检查：
 
@@ -64,10 +72,18 @@ curl http://127.0.0.1:8100/health
 - `runtime_assets/saved_models/poi_encoder/best_model.pt`
 - `runtime_assets/saved_models/town_encoder/best_model.pt`
 
-它们属于本地运行资产，不属于适合上传 GitHub 的源码资产，所以：
+当前这台机器上，这两个检查点已经准备好了，实际路径就是：
+
+- `D:\AAA_Edu\vector-encoder\runtime_assets\saved_models\poi_encoder\best_model.pt`
+- `D:\AAA_Edu\vector-encoder\runtime_assets\saved_models\town_encoder\best_model.pt`
+
+所以对“你现在这台机器能不能直接跑”这个问题，答案是：可以，已经就绪。
+
+之所以 README 还要强调它们不进 Git，是因为它们属于本地运行资产，不属于适合上传 GitHub 的源码资产，所以：
 
 - 仓库支持真实服务运行
-- 但权重必须由你本地自行准备
+- 当前机器本地权重已经准备好
+- 其他新机器如果重新 clone，需要你自己把本地运行资产补上
 - `.gitignore` 已明确排除 `runtime_assets/`
 
 ## 常用命令
@@ -79,7 +95,7 @@ python -m venv .venv
 pip install -r requirements.txt
 
 # 真实编码器服务
-python python/services/geoloom_encoder_service.py --port 8100
+python run.py serve --port 8100
 
 # 训练 / 评估
 python v26_GLM/train_v26_mlp.py --sample 0.1 --epochs 5

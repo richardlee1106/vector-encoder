@@ -29,6 +29,20 @@ def main():
     elif cmd == "demo":
         subprocess.run([sys.executable, os.path.join(base_dir, "v23", "experiments", "spatial_demo.py")])
 
+    elif cmd == "serve":
+        port = os.environ.get("GEOLOOM_ENCODER_PORT", "8100")
+        argv = sys.argv[2:]
+        if "--port" in argv:
+            index = argv.index("--port")
+            if index + 1 < len(argv):
+                port = str(argv[index + 1])
+        subprocess.run([
+            sys.executable,
+            os.path.join(base_dir, "python", "services", "geoloom_encoder_service.py"),
+            "--port",
+            port,
+        ])
+
     elif cmd == "train_v26":
         subprocess.run([
             sys.executable,

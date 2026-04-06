@@ -1,4 +1,4 @@
-# Vector Encode Migration Report
+# Vector Encoder Migration Report
 
 日期：2026-04-06
 
@@ -87,6 +87,8 @@
 
 - `python python/services/geoloom_encoder_service.py --port 8100`
   - 结果：成功
+- `python run.py serve --port 8100`
+  - 结果：成功
 - `GET http://127.0.0.1:8100/health`
   - 结果：成功
   - 关键值：
@@ -123,6 +125,13 @@
 - 真实服务运行需要本地运行时检查点
 - 训练 / 推理依赖 `torch` 等 Python 包
 
+补充说明：
+
+- 当前这台机器上的 `D:\AAA_Edu\vector-encoder\runtime_assets\saved_models\poi_encoder\best_model.pt` 已存在
+- 当前这台机器上的 `D:\AAA_Edu\vector-encoder\runtime_assets\saved_models\town_encoder\best_model.pt` 已存在
+- 所以“本机直接运行”已经满足条件
+- 这里只是继续说明：这些检查点不会被 GitHub 仓库上传
+
 ### 还需要继续消除吗
 
 就“脱离原仓库可独立交付”这个标准来说，不需要继续消除。
@@ -143,10 +152,10 @@
 
 实际远端仓库：
 
-- `https://github.com/richardlee1106/vector-encode`
+- `https://github.com/richardlee1106/vector-encoder`
 
 已执行：
 
-- `git remote add origin https://github.com/richardlee1106/vector-encode.git`
-- `git commit -m "init vector-encode"`
+- `git remote add origin https://github.com/richardlee1106/vector-encoder.git`
+- `git commit -m "init vector-encoder"`
 - `git push -u origin main`
